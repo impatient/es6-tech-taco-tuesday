@@ -43,10 +43,9 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h2>Using ECMAScript 6 Today</h2>
-					<h3>Why wait?</h3>
+					<h2>ECMAScript 6 in enough depth to get you curious, but not really get anything productive done with it.<span class="fragment">(Working title)</span> </h2>
 					<p>
-						<small>Scott Dillender (@smimp)</a></small>
+						Scott Dillender (@smimp)
 					</p>
                     <aside class="notes">
                       <ol>
@@ -62,12 +61,13 @@
 					<h2>Overview</h2>
 					<ul>
                         <li>Should you use it today?</li>
+                        <li>How it works today</li>
                         <li>What ES6 gives us</li>
-                        <li>Clarity on spec status</li>
                         <li>Types of features</li>
-                        <li>Quick run through of the new features</li>
                         <li>How the existing tools work</li>
-                        <li>Where to learn more</li>
+                        <li>Quick run through of the new features</li>
+                        <li>Clarity on spec status</li>
+                        <li>Questions?</li>
 					</ul>
 
                     <aside class="notes">
@@ -87,6 +87,14 @@
                     <p>
                         ES6 is the result of years long work by the TC39 standards body (Comprised of representatives from various tech companies)
                     </p>
+                </section>
+                <section>
+                    <h2>How it works today</h2>
+                    <ul class="fragment">
+                       <li>Transpilers</li>
+                       <li>node --harmony</li>
+                       <li>Behind browser flags</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>Evergreen Browsers</h2>
@@ -127,25 +135,11 @@
                         <li>Comprehensions/Spread/Destructure</li>
                         <li>Map/WeakMap/Set/WeakSet</li>
                         <li>Proxies</li>
+                        <li>Reflection</li>
                         <li>Numerous Utility Methods</li>
                         <li>Imports</li>
                     </ul>
 
-                </section>
-                <section>
-                    <h2>Current Spec Discussion</h2>
-                    <ul>
-                        <li>Generator Comprehensions</li>
-                        <li>ES6 modules</li>
-                        <li>Object.observe - Definitely in ES7, but no one got the message</li>
-                    </ul>
-                    <aside class="notes">
-                        <ol>
-                            <li>Generator comprehensions: concerns about parallelization (Perhaps automatic)</li>
-                            <li>Modules: what is the this.  When doing modules, what is the equivalent of __dirname.  module command, defaults</li>
-                            <li>Observe: Moved to ES7.  People are already moving forward with implementation/use, which makes it somewhat risky, more in regard to divergent implementations </li>
-                        </ol>
-                    </aside>
                 </section>
                 <section>
                     <section>
@@ -164,7 +158,16 @@
                             Rest Parameters - Syntactic Sugar
                             ```
                             function rest(a, ...b) { console.log(a,b); };
+                            rest(1,2,3,4);
+                            //1,[2,3,4]
 
+                            ```
+                            </script>
+                        </section>
+
+                    <section data-markdown>
+                        <script type="text/template" class="fragment">
+                            ```
                             function unrest(a,b) { console.log(a,b); }
 
                             function restEnd(primaryFunction) {
@@ -179,7 +182,7 @@
                             }
 
                             restEnd(unrest)(1,2,3,4);
-                            rest(1,2,3,4);
+
 
                             ```
                         </script>
@@ -231,8 +234,8 @@
                             };
 
                             //Array comprehension
-                            var eek = [for ( x1 of numberator(-5)) if(x1%2 === 0 ) x1];
-                            console.log(eek);
+                            console.log([for ( x1 of numberator(0)) x1]);
+                            //[1,2,3,4]
                         ```
                         </script>
 
@@ -278,8 +281,59 @@
 
                 </section>
 
+                <section>
+                    <h2>Transpilers in Action</h2>
+                    <ul>
+                        <li>Arrow Function</li>
+                        <li>Shorthand Object</li>
+                    </ul>
 
-				<section>
+
+                </section>
+
+                <section>
+                    <h2>Arrow Function</h2>
+                    <section data-markdown="markdown/transpile/arrowSample.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                    </section>
+
+                    <section data-markdown="markdown/transpile/astArrow.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                    </section>
+
+                    <section data-markdown="markdown/transpile/astArrowEquivalent.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                    </section>
+
+                    <section data-markdown="markdown/transpile/astArrowTransform.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                    </section>
+
+                </section>
+
+                <section>
+                    <h2>Shorthand Object</h2>
+                    <section data-markdown="markdown/transpile/shorthandSample.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                    </section>
+
+                    <section data-markdown="markdown/transpile/astShorthand.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                    </section>
+
+                    <section data-markdown="markdown/transpile/astShorthandEquivalent.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                    </section>
+
+                    <section data-markdown="markdown/transpile/astShorthandTransform.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                    </section>
+
+                </section>
+
+
+
+
 					<section>
                         <!-- TODO Do this with css -->
 						<h2><strike>ES6 in 3 Easy Slides</strike></h2>
@@ -289,6 +343,8 @@
 
 
 					</section>
+
+                <section>
                     <section data-markdown>
 
                         <script type="text/template">
@@ -320,17 +376,73 @@
                             </ol>
 
                         </aside>
+
+                        </section>
+
+                        <section data-markdown="markdown/features/defaultParams.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                        </section>
+
+                        <section data-markdown="markdown/features/destructuring.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                        </section>
+
+                        <section data-markdown="markdown/features/destructuring-arrays.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                        </section>
+
+                        <section data-markdown="markdown/features/generator.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                        </section>
+
+                        <section data-markdown="markdown/features/let-const.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                        </section>
+
+                        <section data-markdown="markdown/features/comprehension.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                        </section>
+
+                        <section data-markdown="markdown/features/spread.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                        </section>
+
+                        <section data-markdown="markdown/features/string-templates.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                        </section>
+
+
                     </section>
 
-                    <section data-markdown="markdown/multi-two/classAndPromise.md" >
+                    <section>
+
+                        <section data-markdown="markdown/multi-two/classAndPromise.md" >
+
+                        </section>
+
+                        <section data-markdown="markdown/multi-two/extendAndRequest.md" >
+
+                        </section>
+
+                        <section data-markdown="markdown/features/string-templates.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                        </section>
+
+                        <section data-markdown="markdown/features/promise-methods.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                        </section>
+
+                        <section data-markdown="markdown/features/class-features.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                        </section>
+
+
 
                     </section>
 
-                    <section data-markdown="markdown/multi-two/extendAndRequest.md" >
 
-                    </section>
-
-                    <section data-markdown="markdown/multi-three/maps.md">
+                    <section>
+                        <section data-markdown="markdown/multi-three/maps.md">
 
                         <aside class="notes">
                             <!--//TODO show import + Proxy + Reflect + Map + Set + Promises + WeakMap + WeakSet -->
@@ -419,16 +531,62 @@
 		</section>
 
                 <section>
+                    <h2>Current Spec Discussion</h2>
+                    <ul>
+                        <li>Generator Comprehensions</li>
+                        <li>ES6 modules</li>
+                        <li>TC39 vs the Community</li>
+                        <li>Node modules</li>
+                        <li>Object.observe - Definitely in ES7, but no one got the message</li>
+                    </ul>
+                    <aside class="notes">
+                        <ol>
+                            <li>Generator comprehensions: concerns about parallelization (Perhaps automatic)</li>
+                            <li>Modules: what is the this.  When doing modules, what is the equivalent of __dirname.  module command, defaults</li>
+                            <li>Observe: Moved to ES7.  People are already moving forward with implementation/use, which makes it somewhat risky, more in regard to divergent implementations </li>
+                        </ol>
+                    </aside>
+                </section>
+
+                <section>
+
+                    <h2>Recast for non-ES6</h2>
+                    <p>
+                       Use case:
+                    </p>
+                    <p>Changed a login function from a boolean to a promise.  </p>
+                    <p>Needed to update all code from the form:</p>
+                    <p>if(condition) { block } else { block} both;</p>
+                    <p class="fragment">to</p>
+                    <p class="fragment">condition.asPromise().done(block #1).fail(block#2).always(both);</p>
+
+                    <section data-markdown="markdown/non-es6/originalCode.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                    </section>
+
+                    <section data-markdown="markdown/non-es6/recastCode-1.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                    </section>
+
+                    <section data-markdown="markdown/non-es6/recastCode-2.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                    </section>
+
+                    <section data-markdown="markdown/non-es6/endResult.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                    </section>
+
+                </section>
+
+
+
+                <section>
 					<h2>Questions?</h2>
                     <ul>
-                        <li>Continued tomorrow at Afternoon Tea</li>
                         <li>Presenting at @midwestio in July</li>
                     </ul>
 
 				</section>
-
-
-
 
 			</div>
 
