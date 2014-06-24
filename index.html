@@ -88,14 +88,14 @@
                         ES6 is the result of years long work by the TC39 standards body (Comprised of representatives from various tech companies)
                     </p>
                 </section>
-                <section>
+                <!--section>
                     <h2>How it works today</h2>
                     <ul class="fragment">
                        <li>Transpilers</li>
                        <li>node --harmony</li>
                        <li>Behind browser flags</li>
                     </ul>
-                </section>
+                </section-->
                 <section>
                     <h2>Evergreen Browsers</h2>
                     <p>
@@ -182,6 +182,7 @@
                             }
 
                             restEnd(unrest)(1,2,3,4);
+                            //1,[2,3,4]
 
 
                             ```
@@ -297,9 +298,15 @@
 
                     </section>
 
+                    <section data-markdown="markdown/transpile/arrowEquivalent.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+
+                    </section>
+
+
                     <section data-markdown="markdown/transpile/astArrow.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
 
                     </section>
+
 
                     <section data-markdown="markdown/transpile/astArrowEquivalent.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
 
@@ -424,17 +431,14 @@
 
                         </section>
 
-                        <section data-markdown="markdown/features/string-templates.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
 
-                        </section>
-
-                        <section data-markdown="markdown/features/promise-methods.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
+                        <!--section data-markdown="markdown/features/promise-methods.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
 
                         </section>
 
                         <section data-markdown="markdown/features/class-features.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
 
-                        </section>
+                        </section-->
 
 
 
@@ -547,38 +551,6 @@
                         </ol>
                     </aside>
                 </section>
-
-                <section>
-
-                    <h2>Recast for non-ES6</h2>
-                    <p>
-                       Use case:
-                    </p>
-                    <p>Changed a login function from a boolean to a promise.  </p>
-                    <p>Needed to update all code from the form:</p>
-                    <p>if(condition) { block } else { block} both;</p>
-                    <p class="fragment">to</p>
-                    <p class="fragment">condition.asPromise().done(block #1).fail(block#2).always(both);</p>
-
-                    <section data-markdown="markdown/non-es6/originalCode.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
-
-                    </section>
-
-                    <section data-markdown="markdown/non-es6/recastCode-1.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
-
-                    </section>
-
-                    <section data-markdown="markdown/non-es6/recastCode-2.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
-
-                    </section>
-
-                    <section data-markdown="markdown/non-es6/endResult.md" data-separator="^\n\n\n" data-vertical="^\n\n" data-notes="^Note:">
-
-                    </section>
-
-                </section>
-
-
 
                 <section>
 					<h2>Questions?</h2>
