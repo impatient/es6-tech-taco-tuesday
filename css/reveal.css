@@ -33,7 +33,7 @@ html, body, .reveal div, .reveal span, .reveal applet, .reveal object, .reveal i
 	font: inherit;
 	vertical-align: baseline;
 }
-
+.reveal ul, .reveal ol { font-size: 1.2em;  }
 .reveal article, .reveal aside, .reveal details, .reveal figcaption, .reveal figure,
 .reveal footer, .reveal header, .reveal hgroup, .reveal menu, .reveal nav, .reveal section {
 	display: block;
@@ -336,8 +336,10 @@ body {
 .reveal pre code {
 	padding: 5px;
 	overflow: auto;
-	max-height: 400px;
+	max-height: 1000px;
 	word-wrap: normal;
+	font-size:36px;
+	line-height:1;
 }
 .reveal pre.stretch code {
 	height: 100%;
