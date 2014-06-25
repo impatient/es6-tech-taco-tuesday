@@ -1,4 +1,5 @@
 AST Shorthand
+---
 ```
   type: "ObjectExpression",
   properties: [

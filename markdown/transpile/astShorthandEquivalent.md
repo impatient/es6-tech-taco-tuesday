@@ -1,4 +1,5 @@
 ES5 AST
+---
 ```
                     "init": {
                         "type": "ObjectExpression",

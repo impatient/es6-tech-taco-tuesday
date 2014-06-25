@@ -1,4 +1,5 @@
-Arrow Function 
+Arrow Function
+---
 ```
  var sum = (a,b) => {return a + b; }
  //or

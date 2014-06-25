@@ -1,4 +1,5 @@
 Transform
+---
 ```
    var Shorthand = Visitor.extend( {
       visitObjectExpression: function(objectExpression) {

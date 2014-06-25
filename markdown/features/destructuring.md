@@ -1,4 +1,5 @@
 Destructuring Object
+---
 ```
    var {key, example} = { key: '123456', example: 'elpmaxe' };
    

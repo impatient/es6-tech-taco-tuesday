@@ -1,4 +1,5 @@
 Shorthand Sample
+---
 ```
 
 var title = 'El presidente';

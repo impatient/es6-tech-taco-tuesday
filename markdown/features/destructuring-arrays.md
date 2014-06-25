@@ -1,4 +1,5 @@
 Destructuring Arrays
+---
 ```
 var [zero, one, two] = ['zero','one','two','three'];
  
